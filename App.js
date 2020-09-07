@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 
 import MyHeader from './components/Header';
 
-import loadingScreen from './screens/loadingScreen';
+import LoadingScreen from './screens/loadingScreen';
 import Accueil from './screens/Accueil';
 import Blog from './screens/Blog';
 
