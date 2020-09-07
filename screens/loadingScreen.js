@@ -1,4 +1,4 @@
-import {React} from 'react'
+import React from 'react'
 import {View, Text, ActivityIndicator, StyleSheet} from 'react-native'
 
 
@@ -18,20 +18,22 @@ const styles = StyleSheet.create({
     container:{
         flex: 1,
         justifyContent : 'center',
-        alignItems: 'center',
+        alignItems: 'center'
     },
 
     mainText:{
-        fontSize:500,
+        fontSize:25,
+        fontFamily:'sans-serif',
         fontWeight:'bold',
+        marginBottom:'10%',
     },
 
     smallText:{
         color:'grey',
-        fontSize:300,
         fontStyle:'italic',
         textDecorationLine:'underline',
         textDecorationColor:'grey',
+        marginTop:'10%',
 
     },
 })
