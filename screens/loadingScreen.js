@@ -6,8 +6,9 @@ export default function LoadingScreen(){
 
     return(
         <View style={styles.container}>
-            <Text>Graph - IT</Text>
+            <Text style={styles.mainText}>Graph - IT</Text>
             <ActivityIndicator size="large"></ActivityIndicator>
+            <Text style={styles.smallText}>chargement ... Veuillez patienter</Text>
         </View>
     )
 }
@@ -23,5 +24,14 @@ const styles = StyleSheet.create({
     mainText:{
         fontSize:500,
         fontWeight:'bold',
+    },
+
+    smallText:{
+        color:'grey',
+        fontSize:300,
+        fontStyle:'italic',
+        textDecorationLine:'underline',
+        textDecorationColor:'grey',
+
     },
 })
