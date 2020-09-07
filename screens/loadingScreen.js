@@ -2,11 +2,11 @@ import {React} from 'react'
 import {View, Text, ActivityIndicator, StyleSheet} from 'react-native'
 
 
-export default function LoadingScreen(){
+export default function(){
 
     return(
         <View style={styles.container}>
-            <Text style={styles.mainText}>Graph - IT</Text>
+            <Text>Graph - IT</Text>
             <ActivityIndicator size="large"></ActivityIndicator>
         </View>
     )
