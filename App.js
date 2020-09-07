@@ -23,8 +23,7 @@ export default function App() {
       
       <MyHeader title={page}/>
 
-      { page === 'Accueil' && 
-      <Accueil navigate={navigate}/> }
+      { page === 'Accueil' && <Accueil navigate={navigate}/> }
     
     </SafeAreaView>
     
