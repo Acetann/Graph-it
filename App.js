@@ -2,10 +2,12 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import loadingScreen from './screens/loadingScreen';
+
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Graph-IT</Text>
+      <Text>Graph - IT</Text>
       <StatusBar style="auto" />
     </View>
   );
