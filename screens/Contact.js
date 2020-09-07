@@ -1,11 +1,11 @@
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 
-export default function Accueil(){
+export default function Contact(){
 
     return (
         <View>
-<Text> Nous Contacter </Text>
+
         </View>
     )
 }
@@ -16,8 +16,5 @@ const styles = StyleSheet.create({
         justifyContent : 'center',
         alignItems: 'center',}
     },
-    mainText:{
-    fontSize:500,
-        fontWeight:'bold',
-},
+    
 )

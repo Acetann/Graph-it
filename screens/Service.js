@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 
-export default function Accueil(){
+export default function Service(){
 
     return (
         <View>
@@ -14,10 +14,7 @@ const styles = StyleSheet.create({
         container:{
             flex: 1,
             justifyContent : 'center',
-            alignItems: 'center',}
+            alignItems: 'center',
     },
-    mainText:{
-    fontSize:500,
-        fontWeight:'bold',}
     }
 )
