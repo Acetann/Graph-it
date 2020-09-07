@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native'
-
+import {Header} from 'react-native-elements';
 
 export default function MyHeader({title}){
 
