@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Button } from 'react-native';
 
 
 import MyHeader from './components/Header';
 
-import loadingScreen from './screens/loadingScreen';
+import LoadingScreen from './screens/loadingScreen';
 import Accueil from './screens/Accueil';
 import Blog from './screens/Blog';
 
@@ -25,6 +25,21 @@ export default function App() {
 
       { page === 'Accueil' && 
       <Accueil navigate={navigate}/> }
+
+      { page === 'Blog' && <Blog/>}
+
+
+      <Button 
+          title="Accueil" 
+          color={page === "Accueil" ? "red" : 'white'}
+          onPress={() => navigate('Accueil')}
+          />
+
+      <Button 
+          title="Blog" 
+          color={page === "Blog" ? "red" : 'white'}
+          onPress={() => navigate('Blog')}
+          />
     
     </SafeAreaView>
     
