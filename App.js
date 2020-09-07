@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 
 import MyHeader from './components/Header';
 
-import loadingScreen from './screens/loadingScreen';
+import LoadingScreen from './screens/loadingScreen';
 import Accueil from './screens/Accueil';
 import Blog from './screens/Blog';
 
@@ -23,8 +23,7 @@ export default function App() {
       
       <MyHeader title={page}/>
 
-      { page === 'Accueil' && 
-      <Accueil navigate={navigate}/> }
+      { page === 'Accueil' && <Accueil navigate={navigate}/> }
     
     </SafeAreaView>
     
@@ -35,7 +34,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
