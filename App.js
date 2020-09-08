@@ -80,12 +80,6 @@ export default function App() {
 
       { page === 'LoadingScreen' && <LoadingScreen/>}
 
-
-      
-
-
-     
-          
     </SafeAreaView>
     
   );
