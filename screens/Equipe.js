@@ -5,7 +5,7 @@ export default function Equipe(){
 
     return (
         <View>
-            <Text></Text>
+            <Text>bolosse</Text>
         </View>
     )
 }
