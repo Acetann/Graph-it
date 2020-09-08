@@ -7,8 +7,9 @@ export default function MyHeader({title}){
     return (
         <Header
             centerComponent={{ text: title, style: { color: '#fff' } }}
-            rightComponent={{ icon: 'account-circle', color: '#fff' }}
+            
         />
+        
     )
 }
 

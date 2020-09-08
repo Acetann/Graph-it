@@ -13,8 +13,6 @@ import Equipe from './screens/Equipe';
 import Realisation from './screens/Realisation';
 import Service from './screens/Service';
 
-
-
 export default function App() {
 
   const [page, setPage] = useState('Accueil');
