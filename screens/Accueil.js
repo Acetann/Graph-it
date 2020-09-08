@@ -8,8 +8,8 @@ export default function Accueil() {
         <View style={styles.container}>
             <View style={styles.logo}>
             <Image
-                source={{ uri: 'https://media.discordapp.net/attachments/752439026950340689/752545411041853570/Fichier_60.75x.png' }}
-                style={{ width: 200, height: 140,}}
+                source={{ uri: 'http://graph-it.cesi.group/uploads/logo_graph_it_a905ce599c.png' }}
+                style={{ width: 220, height: 140, marginTop:'2%'}}
             />
             </View>
         </View>
