@@ -1,11 +1,10 @@
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 
-import PageTitle from '../components/PageTitle'
 
 export default function Realisation(){
 
-        
+
     return (
         <View>
             <Text>Nos réalisations</Text>
