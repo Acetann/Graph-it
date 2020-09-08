@@ -5,7 +5,7 @@ export default function Equipe(){
 
     return (
         <View>
-            <Text>Présentation de l'équipe</Text>
+            <Text>Notre Équipe</Text>
         </View>
     )
 }
