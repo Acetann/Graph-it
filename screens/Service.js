@@ -35,7 +35,7 @@ export default function Service(){
             ViewContent.push(
 
                 <View style={styles.container}>
-                    <Text style={styles.ServiceTitre}> {data[i].TitreS}</Text>
+                    <Text style={styles.ServiceTitre}> {data[i].NomS}</Text>
                 </View>
 
             )
@@ -61,16 +61,7 @@ const styles = StyleSheet.create({
             alignItems: 'center',
     },
 
-    realisationImage:{
-        marginTop:5,
-        marginBottom:2,
-        justifyContent:'center',
-        width:150,
-        height:150,
-        borderRadius:100,
-    },
-
-    realisationTitre:{
+    ServiceTitre:{
         fontWeight:'600',
         fontSize:20,
         fontFamily: 'sans-serif',
