@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import {View, StyleSheet, Text , TextInput,} from 'react-native';
-import { Switch , Picker } from 'native-base';
+import {View, StyleSheet, Text , TextInput, TouchableOpacity,} from 'react-native';
+import { Switch , Picker, Button } from 'native-base';
 
 
 export default function Equipe(){
@@ -22,27 +22,29 @@ export default function Equipe(){
         }
     }
 
+
+
     return (
         <View style={styles.container}>
             <View style={{marginTop:'3%',marginHorizontal:'5%'}}>
                 <Text style={styles.inputName}>Adresse email</Text>
-                <TextInput style={styles.input}/>
+                <TextInput style={styles.input} onChangeText={(text) => setInpEmail(text)}/>
             </View>
 
             <View style={{marginTop:'3%',marginHorizontal:'5%'}}>
                 <Text style={styles.inputName}>Numéro de téléphone</Text>
-                <TextInput style={styles.input}/>
+                <TextInput style={styles.input} onChangeText={(text) => setInpNumTel(text)}/>
             </View>
 
             <View style={{flexDirection:'row',marginTop:'3%',marginHorizontal:'5%'}}>
                 <View style={{width:'45%',marginRight:'5%'}}>
                     <Text style={styles.inputName}>Nom</Text>
-                    <TextInput style={styles.input}/>
+                    <TextInput style={styles.input} onChangeText={(text) => setInpNom(text)}/>
                 </View>
                 
                 <View style={{width:'49%' , marginLeft:'1%'}}>
                     <Text style={styles.inputName}>Prénom</Text>
-                    <TextInput style={styles.input}/>
+                    <TextInput style={styles.input} onChangeText={(text) => setInpPrenom(text)}/>
                 </View>
             </View>
             <View style={{alignItems:'center',marginTop:'5%'}}>
@@ -53,26 +55,42 @@ export default function Equipe(){
                     <Text style={styles.inputName}> Oui</Text>
                 </View>
             </View>
-
+            {demandeDevis &&
             <View style={{marginTop:'3%',marginHorizontal:'5%'}}>
                 <Text style={styles.inputName}>Nom de l'entreprise</Text>
-                <TextInput style={styles.input}/>
+                <TextInput style={styles.input} onChangeText={(text) => setInpEntreprise(text)}/>
             </View>
-
+            }   
+            
+            {demandeDevis &&
             <View style={{marginTop:'3%',marginHorizontal:'5%',borderBottomColor:'grey',borderBottomWidth:0.5,borderStyle:'solid'}}>
               <Text style={styles.inputName}>Type de projet</Text>
-                <Picker
-                    selectedValue={inp_TypeProjet}
-                    style={{ height: 50 ,}}
-                    onValueChange={(itemValue, itemIndex) => setInpTypeProjet(itemValue)}>
+                
+                    {inp_TypeProjet === '' 
+                        ?<Picker
+                        selectedValue={inp_TypeProjet}
+                        style={{ height: 50 ,}}
+                        onValueChange={(itemValue, itemIndex) => setInpTypeProjet(itemValue)}>   
+                        <Picker.Item label="sélectionnez un type dans la liste..." value='' />
+                        <Picker.Item label="Création d'un site web" value="SiteWeb" />
+                        <Picker.Item label="Création d'une application mobile" value="ApplicationMobile" />
+                        <Picker.Item label="Autre" value="Autre" />
+                        </Picker>
+                    
+                        :<Picker
+                        selectedValue={inp_TypeProjet}
+                        style={{ height: 50 ,}}
+                        onValueChange={(itemValue, itemIndex) => setInpTypeProjet(itemValue)}>   
+                        <Picker.Item label="Création d'un site web" value="SiteWeb" />
+                        <Picker.Item label="Création d'une application mobile" value="ApplicationMobile" />
+                        <Picker.Item label="Autre" value="Autre" />
+                        </Picker>
+                    }
 
-                    <Picker.Item label="Création d'un site web" value="SiteWeb" />
-                    <Picker.Item label="Création d'une application mobile" value="ApplicationMobile" />
-                    <Picker.Item label="Autre" value="Autre" />
-
-                </Picker>
             </View>
-
+            }
+            
+        
             <View style={{marginTop:'3%',marginHorizontal:'5%'}}>
                 <Text style={styles.inputName}>Entrez votre message</Text>
                 <TextInput 
@@ -80,10 +98,16 @@ export default function Equipe(){
                     style={{textAlign:'center',alignContent:'flex-start',justifyContent: "flex-start",marginTop:'2%',borderStyle:'solid',borderColor:'grey',borderWidth:0.5,borderRadius:10}}
                     multiline={true}
                     numberOfLines={10}
+                    onChangeText={(text) => setInpMessage(text)}
                 />
             </View>
 
-            
+            <View style={{marginTop:'3%',marginHorizontal:'5%',flexDirection:'row-reverse'}}>
+                <TouchableOpacity style={styles.button} onPress={console.log(inp_Email,inp_NumTel,inp_Nom,inp_Prenom,inp_TypeProjet,inp_Entreprise,inp_Message)}>
+                    <Text style={styles.button}>Envoyer</Text>
+                </TouchableOpacity>
+            </View>
+
         </View>
     )
 }
@@ -102,5 +126,16 @@ const styles = StyleSheet.create({
         borderBottomColor:'grey',
         borderBottomWidth:0.5,
 
+    },
+    button:{
+        color:'white',
+        backgroundColor:'#093460',
+        textAlign:'center',
+        textAlignVertical:'center',
+        width:150,
+        height:25,
+        borderRadius:15,
+        borderColor:'grey',
+        borderWidth:0.5,
     },
 })
