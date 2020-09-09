@@ -13,6 +13,18 @@ export default function Equipe(){
     const [inp_TypeProjet,setInpTypeProjet] =useState('')
     const [inp_Message,setInpMessage] =useState('')
 
+    function checkEmail(str) {
+        setInpEmail(str);
+        var regex = /[^@ \t\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/;
+        return regex.test(str);
+    }
+
+    function checkNumTel(str){
+        setInpNumTel(str);
+        var regex = /^(0|\+33)[1-9]([-. ]?[0-9]{2}){4}$/;
+        return regex.test(str);
+    }
+
     function DevisSwitch(){
         if(demandeDevis === false){
             setDemandeDevis(true)
@@ -22,18 +34,19 @@ export default function Equipe(){
         }
     }
 
+    
 
 
     return (
         <View style={styles.container}>
             <View style={{marginTop:'3%',marginHorizontal:'5%'}}>
                 <Text style={styles.inputName}>Adresse email</Text>
-                <TextInput style={styles.input} style={{borderBottomColor: demandeDevis ? 'green' : 'red'}} onChangeText={(text) => setInpEmail(text)}/>
+                <TextInput style={styles.input,{borderBottomColor: demandeDevis ? 'green' : 'red'}}  onChangeText={(text) => checkEmail(text)}/>
             </View>
 
             <View style={{marginTop:'3%',marginHorizontal:'5%'}}>
                 <Text style={styles.inputName}>Numéro de téléphone</Text>
-                <TextInput style={styles.input} onChangeText={(text) => setInpNumTel(text)}/>
+                <TextInput style={styles.input} onChangeText={(text) => checkNumTel(text)}/>
             </View>
 
             <View style={{flexDirection:'row',marginTop:'3%',marginHorizontal:'5%'}}>
