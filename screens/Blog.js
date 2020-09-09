@@ -37,7 +37,6 @@ export default function Blog() {
                         <Image style={styles.ArticleImage} source={{ uri: 'http://graph-it.cesi.group' + data[i].ImageA.url }} />
                         <Text style={styles.ArticleDesc}> {data[i].DescriptionA}</Text>
                     </View>
-                
             )
         }
     }

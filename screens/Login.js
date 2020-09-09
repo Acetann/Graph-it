@@ -2,10 +2,15 @@ import React, { useState } from 'react';
 import { View, Button, Text, StyleSheet, ScrollView, TouchableOpacity, SafeAreaView, TextInput } from 'react-native'
 
 
-export default function Login(props) {
+export default function Login() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [page, setPage] = useState('');
+
+    function navigate(page) {
+        setPage(page)
+      }
 
     function checkPassword(str) {
         var re = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
@@ -24,7 +29,7 @@ export default function Login(props) {
             alert('Veuillez entrer une adresse email valide')
         } else {
             if (email === 'contact@entreprise.com' && password === '$Motdepasse2') {
-                props.login();
+                console.log("Connecté")
             } else {
                 alert('Utilisateur introuvable')
             }

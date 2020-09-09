@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {View, StyleSheet, Text ,Image, ScrollView, Card, Dimensions} from 'react-native';
+import {View, StyleSheet, Text ,Image, ScrollView, Card, Dimensions, ImageBackground} from 'react-native';
 
 const {height, width} = Dimensions.get('window');
 
@@ -39,7 +39,14 @@ export default function Realisation(){
                 <View style={styles.container}>
                     <View style={styles.card}>
                     <Text style={styles.realisationTitre}> {data[i].TitreR}</Text>
+                        <Image style={styles.reaImage} source={{uri:'http://graph-it.cesi.group'+data[i].ImageR.url}}/>
+                        <View style={styles.declinaisons}>
+                            <Text style={styles.decliButton}> site web </Text>
+                            <Text style={styles.decliButton}> IOS </Text>
+                            <Text style={styles.decliButton}> Android </Text>
+                        </View>
                     <Text style={styles.realisationDesc}> {data[i].DescriptionR}</Text>
+
                     </View>
                 </View>
 
@@ -87,6 +94,15 @@ const styles = StyleSheet.create({
         color: 'white',
         fontFamily: 'sans-serif',
         alignItems:'center',
+        margin: 10,
+    },
+    reaImage:{
+        marginTop:5,
+        marginBottom:2,
+        justifyContent:'center',
+        width:100,
+        height:100,
+        borderRadius:10,
     },
     realisationDesc:{
         fontWeight:'600',
@@ -94,6 +110,20 @@ const styles = StyleSheet.create({
         color: 'white',
         fontFamily: 'sans-serif',
         alignItems:'center',
+        margin: 10,
     },
+    declinaisons:{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        margin: 10,
+},
+    decliButton:{
+        justifyContent : 'center',
+        alignItems: 'center',
+        backgroundColor: 'white',
+        borderRadius: 20,
+        margin: 10,
+        color: 'blue',
+    }
     }
 )
