@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import {View, StyleSheet, Text ,Image, ScrollView} from 'react-native';
+import {View, StyleSheet, Text ,Image, ScrollView, Card, Dimensions} from 'react-native';
 
+const {height, width} = Dimensions.get('window');
 
 export default function Realisation(){
 
@@ -36,7 +37,10 @@ export default function Realisation(){
             ViewContent.push(
 
                 <View style={styles.container}>
+                    <View style={styles.card}>
                     <Text style={styles.realisationTitre}> {data[i].TitreR}</Text>
+                    <Text style={styles.realisationDesc}> {data[i].DescriptionR}</Text>
+                    </View>
                 </View>
 
             )
@@ -59,24 +63,37 @@ export default function Realisation(){
 const styles = StyleSheet.create({
         container:{
             flex: 1,
+            margin: 50,
+            marginLeft:50,
+            marginRight:50,
             justifyContent : 'center',
             alignItems: 'center',
     },
-
-    realisationImage:{
-        marginTop:5,
-        marginBottom:2,
-        justifyContent:'center',
-        width:150,
-        height:150,
-        borderRadius:100,
+    card:{
+            justifyContent : 'center',
+            alignItems: 'center',
+            borderRadius: 20,
+            minWidth:250,
+            minHeight:125,
+            maxWidth:500,
+            maxHeight:250,
+            backgroundColor: 'blue',
+            shadowColor: 'grey',
+            shadowRadius: 10,
     },
-
     realisationTitre:{
         fontWeight:'600',
         fontSize:20,
+        color: 'white',
         fontFamily: 'sans-serif',
         alignItems:'center',
-    }
+    },
+    realisationDesc:{
+        fontWeight:'600',
+        fontSize:20,
+        color: 'white',
+        fontFamily: 'sans-serif',
+        alignItems:'center',
+    },
     }
 )
