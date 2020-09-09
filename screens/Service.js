@@ -35,7 +35,11 @@ export default function Service(){
             ViewContent.push(
 
                 <View style={styles.container}>
-                    <Text style={styles.ServiceTitre}> {data[i].NomS}</Text>
+                    <View style={styles.card}>
+                        <Text style={styles.ServiceTitre}> {data[i].NomS}</Text>
+                        <Text style={styles.ServiceDescription}> {data[i].DescriptionS}</Text>
+
+                    </View>
                 </View>
 
             )
@@ -60,12 +64,31 @@ const styles = StyleSheet.create({
             justifyContent : 'center',
             alignItems: 'center',
     },
-
+    card:{
+        justifyContent : 'center',
+        alignItems: 'center',
+        borderRadius: 20,
+        minWidth:250,
+        minHeight:125,
+        maxWidth:500,
+        maxHeight:250,
+        backgroundColor: 'blue',
+        shadowColor: 'grey',
+        shadowRadius: 10,
+    },
     ServiceTitre:{
         fontWeight:'600',
         fontSize:20,
+        color: 'white',
         fontFamily: 'sans-serif',
         alignItems:'center',
-    }
+    },
+    ServiceDescription:{
+        fontWeight:'600',
+        fontSize:20,
+        color: 'white',
+        fontFamily: 'sans-serif',
+        alignItems:'center',
+    },
     }
 )
