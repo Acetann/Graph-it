@@ -31,15 +31,13 @@ export default function Blog() {
         for (var i = 0; i < data.length; i++) {
             //console.log(data[i].Photo.url)
             ViewContent.push(
-                <View>
+                
                     <View style={styles.container}>
-                        <Text style={styles.equipeName}> {data[i].TitreA}</Text>
+                        <Text style={styles.ArticleTitre}> {data[i].TitreA}</Text>
                         <Image style={styles.ArticleImage} source={{ uri: 'http://graph-it.cesi.group' + data[i].ImageA.url }} />
+                        <Text style={styles.ArticleDesc}> {data[i].DescriptionA}</Text>
                     </View>
-                    <View>
-                        <Text style={styles.equipeName}> {data[i].DescriptionA}</Text>
-                    </View>
-                </View>
+                
             )
         }
     }
@@ -58,7 +56,7 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        flexDirection: 'row',
+        flexDirection: 'column',
         justifyContent: 'space-around',
         alignItems: 'center',
         marginTop: '5%',
@@ -68,18 +66,26 @@ const styles = StyleSheet.create({
     ArticleImage: {
         marginTop: 5,
         marginBottom: 2,
-        justifyContent: 'center',
+
         width: 150,
         height: 150,
-        borderRadius: 100,
     },
 
-    equipeName: {
+    ArticleTitre: {
+        marginTop: 5,
+        marginBottom: 2,
         fontWeight: '600',
         fontSize: 20,
         fontFamily: 'sans-serif',
-        alignItems: 'center',
-    }
+    },
+
+    ArticleDesc: {
+        marginTop: 5,
+        marginBottom: 2,
+        fontWeight: '600',
+        fontSize: 20,
+        fontFamily: 'sans-serif',
+    },
 
 
 }
