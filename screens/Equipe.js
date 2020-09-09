@@ -20,20 +20,20 @@ export default function Equipe(){
         response.json()
         .then((responseData) => 
         { 
-            console.log(responseData)
+            //console.log(responseData)
             setData(responseData)
         });
       })
       .catch(function(err) 
       {
-        console.log(err)
+        //console.log(err)
       })
     } 
     var ViewContent = [];
 
     if(data != null){
         for(var i = 0; i<data.length;i++){
-            console.log(data[i].Photo.url)
+            //console.log(data[i].Photo.url)
             ViewContent.push(
             
             <View style={styles.container}>
