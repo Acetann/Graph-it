@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, StyleSheet, Text, Image, } from 'react-native';
+import { View, StyleSheet, Text, Image, Button } from 'react-native';
+
+
 
 export default function Accueil() {
-
     
     return (
         <View style={styles.container}>
@@ -12,6 +13,8 @@ export default function Accueil() {
                 style={{ width: 220, height: 140, marginTop:'2%'}}
             />
             </View>
+            
+            
         </View>
     )
 }
