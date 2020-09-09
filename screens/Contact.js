@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Switch} from '@material-ui/core';
-import {View, StyleSheet, Text ,Image, ScrollView, TextInput,} from 'react-native';
+import {View, StyleSheet, Text , TextInput,} from 'react-native';
+import { Switch , Picker } from 'native-base';
 
 
 export default function Equipe(){
@@ -23,7 +23,7 @@ export default function Equipe(){
     }
 
     return (
-        <View>
+        <View style={styles.container}>
             <View style={{marginTop:'3%',marginHorizontal:'5%'}}>
                 <Text style={styles.inputName}>Adresse email</Text>
                 <TextInput style={styles.input}/>
@@ -45,10 +45,42 @@ export default function Equipe(){
                     <TextInput style={styles.input}/>
                 </View>
             </View>
+            <View style={{alignItems:'center',marginTop:'5%'}}>
+                <Text style={styles.inputName}> S'agit-il d'une demande de devis ?</Text>
+                <View style={{flexDirection:'row',marginTop:'1%',marginHorizontal:'5%',alignItems:'center'}}>
+                    <Text style={styles.inputName}> Non</Text>
+                    <Switch value={demandeDevis} onValueChange={() => DevisSwitch()}/>
+                    <Text style={styles.inputName}> Oui</Text>
+                </View>
+            </View>
 
-            <View style={{flexDirection:'row',marginTop:'5%',marginHorizontal:'5%',alignItems:'center'}}>
-                <Text style={styles.inputName}>S'agît-il d'une demande de devis ?</Text>
-                
+            <View style={{marginTop:'3%',marginHorizontal:'5%'}}>
+                <Text style={styles.inputName}>Nom de l'entreprise</Text>
+                <TextInput style={styles.input}/>
+            </View>
+
+            <View style={{marginTop:'3%',marginHorizontal:'5%',borderBottomColor:'grey',borderBottomWidth:0.5,borderStyle:'solid'}}>
+              <Text style={styles.inputName}>Type de projet</Text>
+                <Picker
+                    selectedValue={inp_TypeProjet}
+                    style={{ height: 50 ,}}
+                    onValueChange={(itemValue, itemIndex) => setInpTypeProjet(itemValue)}>
+
+                    <Picker.Item label="Création d'un site web" value="SiteWeb" />
+                    <Picker.Item label="Création d'une application mobile" value="ApplicationMobile" />
+                    <Picker.Item label="Autre" value="Autre" />
+
+                </Picker>
+            </View>
+
+            <View style={{marginTop:'3%',marginHorizontal:'5%'}}>
+                <Text style={styles.inputName}>Entrez votre message</Text>
+                <TextInput 
+                    placeholder="..." 
+                    style={{textAlign:'center',alignContent:'flex-start',justifyContent: "flex-start",marginTop:'2%',borderStyle:'solid',borderColor:'grey',borderWidth:0.5,borderRadius:10}}
+                    multiline={true}
+                    numberOfLines={10}
+                />
             </View>
 
             
@@ -59,7 +91,9 @@ export default function Equipe(){
 
 
 const styles = StyleSheet.create({
-
+    container:{
+        paddingTop:5
+    },
     inputName:{
         color:'grey'
     },
