@@ -1,8 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Text, Image, Button } from 'react-native';
 
-
-
 export default function Accueil() {
     
     return (
@@ -10,7 +8,7 @@ export default function Accueil() {
             <View style={styles.logo}>
             <Image
                 source={{ uri: 'http://graph-it.cesi.group/uploads/logo_graph_it_a905ce599c.png' }}
-                style={{ width: 220, height: 140, marginTop:'2%'}}
+                style={{ width: '100%', height: 290}}
             />
             </View>
             
