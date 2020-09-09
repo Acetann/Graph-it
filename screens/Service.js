@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {View, StyleSheet, Text ,Image, ScrollView} from 'react-native';
+import {View, StyleSheet, Text ,Image, ScrollView, Card, ImageBackground} from 'react-native';
 
 export default function Service(){
 
@@ -37,6 +37,7 @@ export default function Service(){
                 <View style={styles.container}>
                     <View style={styles.card}>
                         <Text style={styles.ServiceTitre}> {data[i].NomS}</Text>
+                        <Image style={styles.ServImage} source={{uri:'http://graph-it.cesi.group'+data[i].ImageS.url}}/>
                         <Text style={styles.ServiceDescription}> {data[i].DescriptionS}</Text>
 
                     </View>
@@ -63,6 +64,9 @@ const styles = StyleSheet.create({
             flex: 1,
             justifyContent : 'center',
             alignItems: 'center',
+            margin: 50,
+            marginLeft:50,
+            marginRight:50,
     },
     card:{
         justifyContent : 'center',
@@ -82,6 +86,15 @@ const styles = StyleSheet.create({
         color: 'white',
         fontFamily: 'sans-serif',
         alignItems:'center',
+        margin: 10,
+    },
+    ServImage:{
+        marginTop:5,
+        marginBottom:2,
+        justifyContent:'center',
+        width:100,
+        height:100,
+        borderRadius:10,
     },
     ServiceDescription:{
         fontWeight:'600',
@@ -89,6 +102,7 @@ const styles = StyleSheet.create({
         color: 'white',
         fontFamily: 'sans-serif',
         alignItems:'center',
+        margin: 10,
     },
     }
 )
