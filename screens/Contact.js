@@ -102,7 +102,7 @@ export default function Equipe(){
                     MailC:inp_Email,
                     NumeroC:inp_NumTel,
                 })
-            }).then((res) => res.json())
+            }).then((res) => console.log(res.json()))
         
     }
 
