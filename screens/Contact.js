@@ -12,17 +12,129 @@ export default function Equipe(){
     const [inp_Entreprise,setInpEntreprise] =useState('')
     const [inp_TypeProjet,setInpTypeProjet] =useState('')
     const [inp_Message,setInpMessage] =useState('')
+    
+    const [errorEmail,setErrorEmail] = useState('none')
+    const [errorNumTel,setErrorNumTel] = useState('')
+    const [errorNom,setErrorNom]=useState('none')
+    const [errorPrenom,setErrorPrenom]=useState('none')
+    const [errorMessage,setErrorMessage]=useState('none')
+    const [errorEntreprise,setErrorEntreprise]=useState('none')
+
+    const [displayError,setDisplayError] = useState('')
+
+    function CheckSend(){
+   
+        if(errorEmail != ''){
+            if(errorEmail == 'none'){
+                setDisplayError('veuillez renseigner une adresse email')
+                setErrorEmail('veuillez renseigner une adresse email')
+                return;
+            }
+            else{
+                setDisplayError(errorEmail)
+                return;
+            }
+        }else{
+            setDisplayError('')
+        }
+
+        if(errorNumTel != ''){
+                setDisplayError(errorNumTel)
+                return;
+        }else{
+            setDisplayError('')
+        }
+
+        if(inp_Nom == ''){
+            setDisplayError('Veuillez renseigner votre nom')
+            setErrorNom('Veuillez renseigner votre nom')
+            return;
+        }
+        else{
+            setDisplayError('')
+            setErrorNom('')
+
+        }
+
+        if(inp_Prenom == ''){
+            setDisplayError('Veuillez renseigner votre prenom')
+            setErrorPrenom('Veuillez renseigner votre prenom')
+            return;
+        }
+        else{
+            setDisplayError('')
+            setErrorPrenom('')
+        }
+
+        if(inp_Entreprise == '' & demandeDevis == true){
+            setDisplayError('Vous devez renseigner votre entreprise pour une demande de devis')
+            setErrorEntreprise('Vous devez renseigner votre entreprise pour une demande de devis')
+            return;
+        }
+        else{
+            setDisplayError('')
+            setErrorEntreprise('')
+        }
+
+        if(inp_Message == ''){
+            setDisplayError('Veuillez renseigner votre message')
+            setErrorMessage('Veuillez renseigner votre message')
+            return;
+        }
+        else{
+            setDisplayError('')
+            setErrorMessage('')
+        }
+
+        console.log('tentative envoi')
+
+        fetch("http://graph-it.cesi.group/clients", {
+                method: "post",
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify({
+                    NomSociete: inp_Entreprise,
+                    NomC:inp_Nom,
+                    PrenomC:inp_Prenom,
+                    TypeC:inp_TypeProjet,
+                    CommentaireC:inp_Message,
+                    MailC:inp_Email,
+                    NumeroC:inp_NumTel,
+                })
+            }).then((res) => console.log(res.json()))
+        
+    }
 
     function checkEmail(str) {
         setInpEmail(str);
         var regex = /[^@ \t\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/;
-        return regex.test(str);
+        
+        if(str == ''){
+            setErrorEmail("Veuillez renseigner une adresse email")
+        }
+        else{
+            if(regex.test(str)){
+                setErrorEmail('')
+            }
+            else{
+                setErrorEmail("Veuillez entrer une adresse email valide")
+            }
+        }
+        
     }
 
     function checkNumTel(str){
         setInpNumTel(str);
         var regex = /^(0|\+33)[1-9]([-. ]?[0-9]{2}){4}$/;
-        return regex.test(str);
+
+
+        if(regex.test(str) || str==''){
+            setErrorNumTel('')
+        }
+        else{
+            setErrorNumTel("Veuillez entrer un numéro de téléphone valide")
+        }
     }
 
     function DevisSwitch(){
@@ -39,25 +151,35 @@ export default function Equipe(){
 
     return (
         <View style={styles.container}>
+                {displayError ?
+                <View style={{marginTop:'3%',marginHorizontal:'5%'}}>
+                    <Text style={{textAlignVertical:'center',textAlign:"center",height:35,color:'red',borderColor:'red',borderWidth:0.5,borderRadius:15}}>{displayError}</Text>
+                </View>
+                :
+                <View style={{marginTop:'3%',marginHorizontal:'5%'}}>
+                    <Text style={{height:25}}></Text>
+                </View>
+                }
+          
             <View style={{marginTop:'3%',marginHorizontal:'5%'}}>
                 <Text style={styles.inputName}>Adresse email</Text>
-                <TextInput style={styles.input,{borderBottomColor: demandeDevis ? 'green' : 'red'}}  onChangeText={(text) => checkEmail(text)}/>
+                <TextInput style={{borderBottomColor:errorEmail!='' & errorEmail != 'none' ? 'red' : 'grey',borderBottomWidth:errorEmail!='' & errorEmail!='none' ? 1 : 0.5}}  onChangeText={(text) => checkEmail(text)}/>
             </View>
 
             <View style={{marginTop:'3%',marginHorizontal:'5%'}}>
                 <Text style={styles.inputName}>Numéro de téléphone</Text>
-                <TextInput style={styles.input} onChangeText={(text) => checkNumTel(text)}/>
+                <TextInput style={{borderBottomColor:errorNumTel!='' & errorNumTel != 'none' ? 'red' : 'grey',borderBottomWidth:errorNumTel!='' & errorNumTel != 'none' ? 1 : 0.5}} onChangeText={(text) => checkNumTel(text)}/>
             </View>
 
             <View style={{flexDirection:'row',marginTop:'3%',marginHorizontal:'5%'}}>
                 <View style={{width:'45%',marginRight:'5%'}}>
                     <Text style={styles.inputName}>Nom</Text>
-                    <TextInput style={styles.input} onChangeText={(text) => setInpNom(text)}/>
+                    <TextInput style={{borderBottomColor:errorNom!='' & errorNom != 'none' ? 'red' : 'grey',borderBottomWidth:errorNom!='' & errorNom!='none' ? 1 : 0.5}} onChangeText={(text) => setInpNom(text)}/>
                 </View>
                 
                 <View style={{width:'49%' , marginLeft:'1%'}}>
                     <Text style={styles.inputName}>Prénom</Text>
-                    <TextInput style={styles.input} onChangeText={(text) => setInpPrenom(text)}/>
+                    <TextInput style={{borderBottomColor:errorPrenom!='' & errorPrenom != 'none' ? 'red' : 'grey',borderBottomWidth:errorPrenom!='' & errorPrenom!='none' ? 1 : 0.5}} onChangeText={(text) => setInpPrenom(text)}/>
                 </View>
             </View>
             <View style={{alignItems:'center',marginTop:'5%'}}>
@@ -71,7 +193,7 @@ export default function Equipe(){
             {demandeDevis &&
             <View style={{marginTop:'3%',marginHorizontal:'5%'}}>
                 <Text style={styles.inputName}>Nom de l'entreprise</Text>
-                <TextInput style={styles.input} onChangeText={(text) => setInpEntreprise(text)}/>
+                <TextInput style={{borderBottomColor:errorEntreprise!='' & errorEntreprise != 'none' ? 'red' : 'grey',borderBottomWidth:errorEntreprise!='' & errorEntreprise!='none' ? 1 : 0.5}} onChangeText={(text) => setInpEntreprise(text)}/>
             </View>
             }   
             
@@ -84,7 +206,7 @@ export default function Equipe(){
                         selectedValue={inp_TypeProjet}
                         style={{ height: 50 ,}}
                         onValueChange={(itemValue, itemIndex) => setInpTypeProjet(itemValue)}>   
-                        <Picker.Item label="sélectionnez un type dans la liste..." value='' />
+                        <Picker.Item label="sélectionnez un type dans la liste..." value='Inconnu' />
                         <Picker.Item label="Création d'un site web" value="SiteWeb" />
                         <Picker.Item label="Création d'une application mobile" value="ApplicationMobile" />
                         <Picker.Item label="Autre" value="Autre" />
@@ -108,7 +230,7 @@ export default function Equipe(){
                 <Text style={styles.inputName}>Entrez votre message</Text>
                 <TextInput 
                     placeholder="..." 
-                    style={{textAlign:'center',alignContent:'flex-start',justifyContent: "flex-start",marginTop:'2%',borderStyle:'solid',borderColor:'grey',borderWidth:0.5,borderRadius:10}}
+                    style={{textAlign:'center',alignContent:'flex-start',justifyContent: "flex-start",marginTop:'2%',borderStyle:'solid',borderColor:errorMessage != '' & errorMessage != 'none' ? 'red' : 'grey',borderWidth:errorMessage != '' & errorMessage != 'none' ? 1 : 0.5,borderRadius:10}}
                     multiline={true}
                     numberOfLines={10}
                     onChangeText={(text) => setInpMessage(text)}
@@ -117,7 +239,7 @@ export default function Equipe(){
 
             <View style={{marginTop:'3%',marginHorizontal:'5%',flexDirection:'row-reverse'}}>
                 <TouchableOpacity style={styles.button} >
-                    <Text onPress={() => console.log(inp_Email,inp_NumTel,inp_Nom,inp_Prenom,inp_TypeProjet,inp_Entreprise,inp_Message)} style={styles.button}>Envoyer</Text>
+                    <Text onPress={() => CheckSend() } style={styles.button}>Envoyer</Text>
                 </TouchableOpacity>
             </View>
 
