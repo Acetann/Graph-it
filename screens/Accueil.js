@@ -14,34 +14,38 @@ export default function Accueil() {
                     <Text>Agence de Développement web et Mobile</Text>
                     <Text>-------------------------------</Text>
                 </View>
-
-                <View style={styles.contenu}>
-                    <ImageBackground source={image} style={styles.image}>
-                        <Text style={styles.service}>Mes services</Text>
-                        <View style={styles.bloc}>
-                            <View style={styles.blocA}>
-                                <Icon
-                                    name='public' />
-                                <Text style={styles.TexteA}>Web Design</Text>
-                                <Text style={styles.TexteA}>Il a été popularisé dans les années 1960 grâce à la vente de feuille.</Text>
-
-                            </View>
-                            <View style={styles.blocB}>
-                                <Icon
-                                    name='public' />
-                                <Text style={styles.TexteB}>Développement Web</Text>
-                                <Text style={styles.TexteB}>Il a été popularisé dans les années 1960 grâce à la vente de feuille.</Text>
-                            </View>
-
-                            <View style={styles.blocC}>
-                                <Icon
-                                    name='public' />
-                                <Text style={styles.TexteC}>Développement d'appli</Text>
-                                <Text style={styles.TexteC}>Il a été popularisé dans les années 1960 grâce à la vente de feuille.</Text>
-                            </View>
+                <ImageBackground source={image} style={styles.image}>
+                    <View style={styles.bloc}>
+                        <View style={styles.blocA}>
+                            <Icon
+                                name='public' />
+                            <Text style={styles.TexteA}>Web Design</Text>
+                            <Text style={styles.TexteA}>Il a été popularisé dans les années 1960 grâce à la vente de feuille.</Text>
                         </View>
-                    </ImageBackground>
-                </View>
+                    </View>
+                
+
+               
+                    <View style={styles.bloc}>
+                        <View style={styles.blocB}>
+                            <Icon
+                                name='public' />
+                            <Text style={styles.TexteB}>Développement Web</Text>
+                            <Text style={styles.TexteB}>Il a été popularisé dans les années 1960 grâce à la vente de feuille.</Text>
+                        </View>
+                    </View>
+            
+
+                
+                    <View style={styles.bloc}>
+                        <View style={styles.blocC}>
+                            <Icon
+                                name='public' />
+                            <Text style={styles.TexteC}>Développement d'appli</Text>
+                            <Text style={styles.TexteC}>Il a été popularisé dans les années 1960 grâce à la vente de feuille.</Text>
+                        </View>
+                    </View>
+                </ImageBackground>
             </View>
         </ScrollView>
     )
@@ -54,9 +58,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
 
-    bloc:{
-        flex:1,
-        marginBottom:100,
+    bloc: {
+        flex: 1,
+        marginBottom: 100,
         flexDirection: 'row',
     },
 
@@ -83,7 +87,7 @@ const styles = StyleSheet.create({
 
     contenu: {
         flex: 1,
-        marginTop:20,
+        marginTop: 20,
     },
 
     image: {
@@ -102,19 +106,19 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
 
-    TexteA:{
+    TexteA: {
         marginTop: 10,
-        textAlign:'center',
+        textAlign: 'center',
     },
 
-    TexteB:{
+    TexteB: {
         marginTop: 10,
-        textAlign:'center',
+        textAlign: 'center',
     },
-    
-    TexteC:{
+
+    TexteC: {
         marginTop: 10,
-        textAlign:'center',
+        textAlign: 'center',
     }
 }
 )
