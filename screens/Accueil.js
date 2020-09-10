@@ -14,38 +14,45 @@ export default function Accueil() {
                     <Text>Agence de Développement web et Mobile</Text>
                     <Text>-------------------------------</Text>
                 </View>
-                <ImageBackground source={image} style={styles.image}>
+
+
+                <View style={styles.contenant}>
                     <View style={styles.bloc}>
                         <View style={styles.blocA}>
                             <Icon
+                                color='green'
                                 name='public' />
                             <Text style={styles.TexteA}>Web Design</Text>
                             <Text style={styles.TexteA}>Il a été popularisé dans les années 1960 grâce à la vente de feuille.</Text>
                         </View>
                     </View>
-                
 
-               
+
+
                     <View style={styles.bloc}>
                         <View style={styles.blocB}>
                             <Icon
+                                color='green'
                                 name='public' />
                             <Text style={styles.TexteB}>Développement Web</Text>
                             <Text style={styles.TexteB}>Il a été popularisé dans les années 1960 grâce à la vente de feuille.</Text>
                         </View>
                     </View>
-            
 
-                
+
+
                     <View style={styles.bloc}>
                         <View style={styles.blocC}>
                             <Icon
+                                color='green'
                                 name='public' />
                             <Text style={styles.TexteC}>Développement d'appli</Text>
                             <Text style={styles.TexteC}>Il a été popularisé dans les années 1960 grâce à la vente de feuille.</Text>
                         </View>
                     </View>
-                </ImageBackground>
+                </View>
+
+
             </View>
         </ScrollView>
     )
@@ -58,9 +65,16 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
 
+    contenant: {
+        borderRadius: 50,
+        borderWidth: 3,
+        borderColor: 'green',
+        marginHorizontal: '2%',
+    },
+
     bloc: {
         flex: 1,
-        marginBottom: 100,
+        marginBottom: 70,
         flexDirection: 'row',
     },
 
