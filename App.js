@@ -51,43 +51,43 @@ export default function App() {
 
         <Button
           title="Accueil"
-          color={page === "Accueil" ? "black" : ''}
+          color={page === "Accueil" ? "green" : ''}
           onPress={() => navigate('Accueil')}
         />
 
         <Button
           title="Blog"
-          color={page === "Blog" ? "black" : ''}
+          color={page === "Blog" ? "green" : ''}
           onPress={() => navigate('Blog')}
         />
 
         <Button
           title="Contact"
-          color={page === "Contact" ? "black" : ''}
+          color={page === "Contact" ? "green" : ''}
           onPress={() => navigate('Contact')}
         />
 
         <Button
           title="Equipe"
-          color={page === "Equipe" ? "black" : ''}
+          color={page === "Equipe" ? "green" : ''}
           onPress={() => navigate('Equipe')}
         />
 
         <Button
           title="Realisation"
-          color={page === "Realisation" ? "black" : ''}
+          color={page === "Realisation" ? "green" : ''}
           onPress={() => navigate('Realisation')}
         />
 
         <Button
           title="Service"
-          color={page === "Service" ? "black" : ''}
+          color={page === "Service" ? "green" : ''}
           onPress={() => navigate('Service')}
         />
 
         <Button
           title="Login"
-          color={page === "Login" ? "black" : ''}
+          color={page === "Login" ? "green" : ''}
           onPress={() => navigate('Login')}
         />
 
@@ -110,6 +110,7 @@ const styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-around',
+    
 
   },
 
