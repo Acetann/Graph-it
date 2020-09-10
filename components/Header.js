@@ -1,29 +1,24 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native'
-import {Header} from 'react-native-elements';
+import { View, Text, StyleSheet } from 'react-native'
+import { Header } from 'react-native-elements';
 
-export default function MyHeader({title}){
+export default function MyHeader({ title }) {
 
+    const img = 'https://github.com/Noe-Louvell/graph-it_front/blob/master/src/assets/img/bg-page2.png'
     return (
         <Header
+            ImageBackground={{ uri: img}}
             centerComponent={{ text: title, style: { color: '#fff' } }}
-            
+            rightComponent={{ icon: 'account-circle', color: '#fff' }}
         />
-        
     )
 }
 
 const styles = StyleSheet.create({
-    header : {
-        width: '100%',
-        backgroundColor: 'white',
-        height: 60,
-        alignItems: 'center',
-        justifyContent:'center',
-        borderBottomColor: 'grey',
-        borderBottomWidth: 1
-      },
-    headerText : {
+
+
+
+    headerText: {
         textAlign: 'center',
         fontWeight: 'bold'
     },
