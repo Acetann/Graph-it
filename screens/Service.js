@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
-import {View, StyleSheet, Text ,Image, ScrollView, Card, ImageBackground} from 'react-native';
+import {View, StyleSheet, Text ,Image, Button, ScrollView, Card, ImageBackground} from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+//import Carousel from './Component/Carousel';
 
-export default function Service(){
+
+
+export default function Service (){
 
     const [data,setData] = useState(null)
     
@@ -36,10 +40,8 @@ export default function Service(){
 
                 <View style={styles.container}>
                     <View style={styles.card}>
-                        <Text style={styles.ServiceTitre}> {data[i].NomS}</Text>
+                        <Text style={styles.ServiceTitre}> {data[i].Titre}</Text>
                         <Image style={styles.ServImage} source={{uri:'http://graph-it.cesi.group'+data[i].ImageS.url}}/>
-                        <Text style={styles.ServiceDescription}> {data[i].DescriptionS}</Text>
-
                     </View>
                 </View>
 
@@ -52,9 +54,9 @@ export default function Service(){
 
     return (
         <View>
-            <ScrollView>
+            <KeyboardAwareScrollView>
                 {ViewContent}
-            </ScrollView>
+            </KeyboardAwareScrollView>
         </View>
     )
 }
@@ -104,5 +106,10 @@ const styles = StyleSheet.create({
         alignItems:'center',
         margin: 10,
     },
+    carouselContainer: {
+       width: 50,
+       height:50,
+       marginTop:10
+        },
     }
 )
