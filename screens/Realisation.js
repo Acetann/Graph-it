@@ -5,9 +5,11 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 
 const {height, width} = Dimensions.get('window');
 
-export default function Realisation(){
+export default function Realisation (){
 
     const [data,setData] = useState(null)
+
+
 
 
     function getRealisations(){
@@ -47,10 +49,7 @@ export default function Realisation(){
                         </View>
                         <Text style={styles.realisationDesc}> {data[i].SubtitleR}</Text>
                         <Image style={styles.reaImage} source={{uri:'http://graph-it.cesi.group'+data[i].ImageR.url}}/>
-                        <TouchableOpacity style={styles.row} onPress={()=>this.toggleExpand()}>
-                            <Icon name={ 'keyboard-arrow-up' } size={30} />
-                        </TouchableOpacity>
-                        <Text style={styles.realisationDesc}> {data[i].DescriptionR}</Text>
+                        <Text>  {data[i].Titre}</Text>
                     </View>
                 </View>
 
