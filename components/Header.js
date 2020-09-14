@@ -14,7 +14,7 @@ export default function MyHeader({ title }) {
             rightComponent={{ ImageBackground: 'https://raw.githubusercontent.com/Noe-Louvell/graph-it_front/master/src/assets/img/logo_1.png?token=AN7XEMT5ELUWHUCKAUXSKI27LHK7A', width:'100%', height:20, color: '#fff' }}
         />
     )
-    
+
 }
 
 const styles = StyleSheet.create({
