@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
         color: 'blue',
     },
     appButtonContainer: {
-        maxHeigth: '100%',
+        maxHeight: '100%',
         minHeight: 25,
         backgroundColor: 'blue',
         alignItems:'center',
