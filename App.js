@@ -51,43 +51,43 @@ export default function App() {
 
         <Button
           title="Accueil"
-          color={page === "Accueil" ? "green" : ''}
+          color={page === "Accueil" ? "#1F6639" : '#1F6639'}
           onPress={() => navigate('Accueil')}
         />
 
         <Button
           title="Blog"
-          color={page === "Blog" ? "green" : ''}
+          color={page === "Blog" ? "#1F6639" : '#1F6639'}
           onPress={() => navigate('Blog')}
         />
 
         <Button
           title="Contact"
-          color={page === "Contact" ? "green" : ''}
+          color={page === "Contact" ? "#1F6639" : '#1F6639'}
           onPress={() => navigate('Contact')}
         />
 
         <Button
           title="Equipe"
-          color={page === "Equipe" ? "green" : ''}
+          color={page === "Equipe" ? "#1F6639" : '#1F6639'}
           onPress={() => navigate('Equipe')}
         />
 
         <Button
           title="Realisation"
-          color={page === "Realisation" ? "green" : ''}
+          color={page === "Realisation" ? "#1F6639" : '#1F6639'}
           onPress={() => navigate('Realisation')}
         />
 
         <Button
           title="Service"
-          color={page === "Service" ? "green" : ''}
+          color={page === "Service" ? "#1F6639" : '#1F6639'}
           onPress={() => navigate('Service')}
         />
 
         <Button
           title="Login"
-          color={page === "Login" ? "green" : ''}
+          color={page === "Login" ? "#1F6639" : '2CDA6C'}
           onPress={() => navigate('Login')}
         />
 
