@@ -3,13 +3,12 @@ import {View, StyleSheet, Text ,Image, ScrollView, Card, Button, Dimensions, Ima
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import Icon from "react-native-vector-icons/MaterialIcons";
 
+
 const {height, width} = Dimensions.get('window');
 
 export default function Realisation (){
 
     const [data,setData] = useState(null)
-
-
 
 
     function getRealisations(){
@@ -50,6 +49,7 @@ export default function Realisation (){
                         <Text style={styles.realisationDesc}> {data[i].SubtitleR}</Text>
                         <Image style={styles.reaImage} source={{uri:'http://graph-it.cesi.group'+data[i].ImageR.url}}/>
                         <Text>  {data[i].Titre}</Text>
+                        <Text style={styles.realisationDesc}> {data[i].DescriptionR}</Text>
                     </View>
                 </View>
 
@@ -86,6 +86,7 @@ export default function Realisation (){
                     <Text style={styles.appButtonText} >Site web</Text>
                 </TouchableOpacity>
             </View>
+
                 {ViewContent}
             </KeyboardAwareScrollView>
         </View>
@@ -101,8 +102,8 @@ const styles = StyleSheet.create({
     card:{
         alignItems: 'center',
         borderRadius: 20,
-        backgroundColor: 'blue',
-        shadowColor: 'grey',
+        backgroundColor: '#2CDA6C',
+        shadowColor: '#1F6639',
         shadowRadius: 10,
         margin: 20,
         marginBottom: 20,
@@ -141,12 +142,11 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         margin: 5,
         fontSize:20,
-        color: 'blue',
+        color: '#2CDA6C',
     },
     appButtonContainer: {
-        maxHeight: '100%',
         minHeight: 25,
-        backgroundColor: 'blue',
+        backgroundColor: '#2CDA6C',
         alignItems:'center',
         justifyContent : 'center',
         borderRadius: 25,
@@ -162,5 +162,6 @@ const styles = StyleSheet.create({
         alignItems:'center',
         textTransform: "uppercase",
     },
+
     }
 )

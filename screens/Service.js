@@ -42,6 +42,7 @@ export default function Service (){
                     <View style={styles.card}>
                         <Text style={styles.ServiceTitre}> {data[i].Titre}</Text>
                         <Image style={styles.ServImage} source={{uri:'http://graph-it.cesi.group'+data[i].ImageS.url}}/>
+                        <Text style={styles.ServiceDescription}> {data[i].Description}</Text>
                     </View>
                 </View>
 
@@ -78,8 +79,8 @@ const styles = StyleSheet.create({
         minHeight:125,
         maxWidth:500,
         maxHeight:250,
-        backgroundColor: 'blue',
-        shadowColor: 'grey',
+        backgroundColor: '#2CDA6C',
+        shadowColor: '#1F6639',
         shadowRadius: 10,
     },
     ServiceTitre:{
