@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, SafeAreaView, Button } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Button, AppRegistry } from 'react-native';
 
 
 import MyHeader from './components/Header';
@@ -26,6 +26,7 @@ export default function App() {
   return (
 
     <SafeAreaView style={styles.container}>
+      
 
       <MyHeader title={page} />
       <View style={{ flex: 1 }}>
@@ -87,7 +88,7 @@ export default function App() {
 
         <Button
           title="Login"
-          color={page === "Login" ? "#1F6639" : '2CDA6C'}
+          color={page === "Login" ? "#1F6639" : '#1F6639'}
           onPress={() => navigate('Login')}
         />
 

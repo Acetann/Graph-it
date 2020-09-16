@@ -64,6 +64,7 @@ export default function Login() {
                 title="Se connecter"
                 disabled={(email === '' || password === '')}
                 onPress={checkAndLoginIn}
+                
             />
 
         </SafeAreaView>

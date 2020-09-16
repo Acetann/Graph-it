@@ -5,7 +5,7 @@ export default function Blog() {
 
     const [data, setData] = useState(null)
 
-    function getArticle() {
+    function GetArticle() {
         fetch('http://graph-it.cesi.group/articles', {
             method: 'GET',
             dataType: 'json',
@@ -41,7 +41,7 @@ export default function Blog() {
         }
     }
     else {
-        getArticle();
+        GetArticle();
     }
 
     return (
