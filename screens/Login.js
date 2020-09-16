@@ -38,9 +38,10 @@ export default function Login() {
 
     return (
         <SafeAreaView>
+            <View style={styles.container}>
             
 
-            <TextInput
+            <TextInput style={styles.inputLog}
                 value={email}
                 onChangeText={(str) => setEmail(str)}
 
@@ -50,7 +51,7 @@ export default function Login() {
                 type="email"
             />
 
-            <TextInput
+            <TextInput style={styles.inputLog}
                 value={password}
                 onChangeText={(str) => setPassword(str)}
 
@@ -61,16 +62,32 @@ export default function Login() {
             />
 
             <Button
+                color="#2CDA6C"
                 title="Se connecter"
                 disabled={(email === '' || password === '')}
                 onPress={checkAndLoginIn}
             />
-
+        </View>
         </SafeAreaView>
     )
 }
 
 const styles = StyleSheet.create({
+    container:{
+        paddingTop:130,
+        marginLeft: 9
+    },
+  
+    inputLog:{
+        width:300,
+        height:50,
+        margin:30,
+        borderWidth:1,
+        borderColor:'black',
+        borderRadius: 20,
+        overflow:'hidden',
+        textAlign:'center',
+    },
 
-}
+    }       
 )
