@@ -76,7 +76,8 @@ export default function Login() {
 const styles = StyleSheet.create({
     container:{
         paddingTop:130,
-        marginLeft: 9
+        marginLeft:'auto',
+        marginRight:'auto'
     },
   
     inputLog:{
