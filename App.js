@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, SafeAreaView, Button, AppRegistry } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Button, AppRegistry, TouchableOpacity } from 'react-native';
 
 
 import MyHeader from './components/Header';
+
 
 
 
@@ -18,7 +19,7 @@ import Login from './screens/Login';
 export default function App() {
 
   const [page, setPage] = useState('Accueil');
-
+  
   function navigate(page) {
     setPage(page)
   }
@@ -26,10 +27,11 @@ export default function App() {
   return (
 
     <SafeAreaView style={styles.container}>
-      
 
-      <MyHeader title={page} />
+     <MyHeader/>
+      
       <View style={{ flex: 1 }}>
+        
         {page === 'Accueil' &&
           <Accueil navigate={navigate} />}
 
@@ -111,7 +113,7 @@ const styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-around',
-    
+
 
   },
 

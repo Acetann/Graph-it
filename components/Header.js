@@ -1,35 +1,66 @@
 import React from 'react';
-import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native'
+import { createAppContainer } from 'react-navigation';
+import { createDrawerNavigator, DrawerNavigatorItems } from 'react-navigation-drawer';
+import { SafeAreaView } from 'react-native'
 import { Header } from 'react-native-elements';
+import { View, TouchableOpacity, Image, StyleSheet, Text } from 'react-native'
 
-export default function MyHeader({ title }) {
+import Accueil from '../screens/Accueil';
+import Blog from '../screens/Blog';
 
-    const img = 'http://graph-it.cesi.group/uploads/bg_page2_08c2e9f9a8.png'
-    return (
-        
-            <Header
-            
-                backgroundImage={{ uri: img }}
-                backgroundImageStyle={styles.headerImg}
-                backgroundColor={"transparent"}
-                leftComponent={{ icon: 'menu', color: '#fff' }}
-                centerComponent={{ text: title, style: { color: '#fff' } }}
-                rightComponent={{ ImageBackground: 'https://raw.githubusercontent.com/Noe-Louvell/graph-it_front/master/src/assets/img/logo_1.png?token=AN7XEMT5ELUWHUCKAUXSKI27LHK7A', width: '100%', height: 20, color: '#fff' }}
-            />
-        
-    )
+export default function MyHeader({ props }) {
+
+    const RootStack = createDrawerNavigator(
+        {
+            'Accueil': { screen: Accueil },
+            'Blog': { screen: Blog },
+
+        },
+        {
+            contentComponent: props => < CustomDrawerComponent {...props} />
+        })
+
+
+    const CustomDrawerComponent = (props) => (
+        <SafeAreaView
+         forceInset={{ top: 'always', horizontal: 'never' }}
+        >
+            <DrawerNavigatorItems {...props} />
+        </SafeAreaView>
+    );
+
+    const AppContainer = createAppContainer(RootStack);
+
+    return (<View>
+        <AppContainer />
+        <Header containerStyle={{ backgroundColor: 'white', }}>
+
+            <TouchableOpacity onPress={() => this.props.navigation.openDrawer()} >
+
+                <Image source={require('../assets/splash.png')} style={{ width: 50, height: 50, tintColor: '#1F73BD' }} />
+                
+            </TouchableOpacity>
+
+        </Header>
+    </View>)
 
 }
-
 const styles = StyleSheet.create({
 
-    headerImg: {
+    container: {
         flex: 1,
-        resizeMode: "cover"
+        backgroundColor: '#fff',
     },
 
-    headerText: {
-        textAlign: 'center',
-        fontWeight: 'bold'
+    menu: {
+        display: 'flex',
+        width: '100%',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+
+
     },
-})
+
+
+});
+
