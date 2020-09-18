@@ -28,29 +28,9 @@ export default function App() {
 
     <SafeAreaView style={styles.container}>
 
-     <MyHeader/>
-      
-      <View style={{ flex: 1 }}>
-        
-        {page === 'Accueil' &&
-          <Accueil navigate={navigate} />}
+     <MyHeader title={page}/>
 
-        {page === 'Blog' && <Blog />}
-
-        {page === 'Contact' && <Contact />}
-
-        {page === 'Equipe' && <Equipe />}
-
-        {page === 'Realisation' && <Realisation />}
-
-        {page === 'Service' && <Service />}
-
-        {page === 'LoadingScreen' && <LoadingScreen />}
-
-        {page === 'Login' && <Login />}
-
-      </View>
-      <View style={styles.menu}>
+     <View style={styles.menu}>
 
         <Button
           title="Accueil"
@@ -95,6 +75,28 @@ export default function App() {
         />
 
       </View>
+      
+      <View style={{ flex: 1 }}>
+        
+        {page === 'Accueil' &&
+          <Accueil navigate={navigate} />}
+
+        {page === 'Blog' && <Blog />}
+
+        {page === 'Contact' && <Contact />}
+
+        {page === 'Equipe' && <Equipe />}
+
+        {page === 'Realisation' && <Realisation />}
+
+        {page === 'Service' && <Service />}
+
+        {page === 'LoadingScreen' && <LoadingScreen />}
+
+        {page === 'Login' && <Login />}
+
+      </View>
+      
 
     </SafeAreaView>
 
@@ -113,6 +115,7 @@ const styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-around',
+    marginTop:-1
 
 
   },

@@ -1,5 +1,5 @@
 import React from 'react';
-import { createAppContainer } from 'react-navigation';
+import { createAppContainer, withNavigation } from 'react-navigation';
 import { createDrawerNavigator, DrawerNavigatorItems } from 'react-navigation-drawer';
 import { SafeAreaView } from 'react-native'
 import { Header } from 'react-native-elements';
@@ -8,7 +8,9 @@ import { View, TouchableOpacity, Image, StyleSheet, Text } from 'react-native'
 import Accueil from '../screens/Accueil';
 import Blog from '../screens/Blog';
 
-export default function MyHeader({ props }) {
+export default function MyHeader({ title }) {
+
+    const img = 'http://graph-it.cesi.group/uploads/bg_page2_08c2e9f9a8.png'
 
     const RootStack = createDrawerNavigator(
         {
@@ -23,7 +25,7 @@ export default function MyHeader({ props }) {
 
     const CustomDrawerComponent = (props) => (
         <SafeAreaView
-         forceInset={{ top: 'always', horizontal: 'never' }}
+        //forceInset={{ top: 'always', horizontal: 'never' }}
         >
             <DrawerNavigatorItems {...props} />
         </SafeAreaView>
@@ -31,36 +33,21 @@ export default function MyHeader({ props }) {
 
     const AppContainer = createAppContainer(RootStack);
 
-    return (<View>
-        <AppContainer />
-        <Header containerStyle={{ backgroundColor: 'white', }}>
+    return (
+        <View>
 
-            <TouchableOpacity onPress={() => this.props.navigation.openDrawer()} >
+            <Header 
+                backgroundColor={"#1F6639"}
+                centerComponent={{ text: title, style: { color: '#fff' } }}>
 
-                <Image source={require('../assets/splash.png')} style={{ width: 50, height: 50, tintColor: '#1F73BD' }} />
-                
-            </TouchableOpacity>
+            </Header>
 
-        </Header>
-    </View>)
+        </View>
+        )
 
 }
 const styles = StyleSheet.create({
 
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-    },
-
-    menu: {
-        display: 'flex',
-        width: '100%',
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-
-
-    },
-
-
+    
 });
 
