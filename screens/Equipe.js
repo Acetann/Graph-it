@@ -206,9 +206,6 @@ const styles = StyleSheet.create({
     }, 
 
     equipeName:{
-        fontWeight:'600',
-        fontSize:20,
-        fontFamily: 'sans-serif',
         alignItems:'center',
     }
 })

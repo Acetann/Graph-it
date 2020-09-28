@@ -23,8 +23,6 @@ const styles = StyleSheet.create({
 
     mainText:{
         fontSize:25,
-        fontFamily:'sans-serif',
-        fontWeight:'bold',
         marginBottom:'10%',
     },
 
