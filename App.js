@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, SafeAreaView, Button, AppRegistry, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Button } from 'react-native';
 
 
 import MyHeader from './components/Header';
-
+import Footer from './components/Footer'
 
 
 
@@ -19,7 +19,7 @@ import Login from './screens/Login';
 export default function App() {
 
   const [page, setPage] = useState('Accueil');
-  
+
   function navigate(page) {
     setPage(page)
   }
@@ -28,56 +28,11 @@ export default function App() {
 
     <SafeAreaView style={styles.container}>
 
-     <MyHeader title={page}/>
-
-     <View style={styles.menu}>
-
-        <Button
-          title="Accueil"
-          color={page === "Accueil" ? "#1F6639" : '#1F6639'}
-          onPress={() => navigate('Accueil')}
-        />
-
-        <Button
-          title="Blog"
-          color={page === "Blog" ? "#1F6639" : '#1F6639'}
-          onPress={() => navigate('Blog')}
-        />
-
-        <Button
-          title="Contact"
-          color={page === "Contact" ? "#1F6639" : '#1F6639'}
-          onPress={() => navigate('Contact')}
-        />
-
-        <Button
-          title="Equipe"
-          color={page === "Equipe" ? "#1F6639" : '#1F6639'}
-          onPress={() => navigate('Equipe')}
-        />
-
-        <Button
-          title="Realisation"
-          color={page === "Realisation" ? "#1F6639" : '#1F6639'}
-          onPress={() => navigate('Realisation')}
-        />
-
-        <Button
-          title="Service"
-          color={page === "Service" ? "#1F6639" : '#1F6639'}
-          onPress={() => navigate('Service')}
-        />
-
-        <Button
-          title="Login"
-          color={page === "Login" ? "#1F6639" : '#1F6639'}
-          onPress={() => navigate('Login')}
-        />
-
-      </View>
+      <MyHeader title={page} />
       
+
       <View style={{ flex: 1 }}>
-        
+
         {page === 'Accueil' &&
           <Accueil navigate={navigate} />}
 
@@ -95,10 +50,12 @@ export default function App() {
 
         {page === 'Login' && <Login />}
 
+        <Footer navigate={navigate} />
       </View>
-      
+
 
     </SafeAreaView>
+
 
   );
 }
@@ -115,7 +72,7 @@ const styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginTop:-1
+    
 
 
   },
