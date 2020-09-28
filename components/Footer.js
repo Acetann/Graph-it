@@ -26,7 +26,7 @@ export default function Footer(props) {
                     icon={
                         <Icon
                             name="home"
-                            size={30}
+                            size={50}
 
                             color="white"
                         />
@@ -38,7 +38,7 @@ export default function Footer(props) {
                     icon={
                         <Icon
                             name="book"
-                            size={30}
+                            size={50}
                             color="white"
                         />
                     }
@@ -50,7 +50,7 @@ export default function Footer(props) {
                     icon={
                         <Icon
                             name="ticket"
-                            size={30}
+                            size={50}
                             color="white"
                         />
                     }
@@ -62,7 +62,7 @@ export default function Footer(props) {
                 icon={
                     <Icon
                         name="users"
-                        size={30}
+                        size={50}
                         color="white"
                     />
                 }
@@ -75,7 +75,7 @@ export default function Footer(props) {
                 icon={
                     <Icon
                         name="tasks"
-                        size={30}
+                        size={50}
                         color="white"
                     />
                 }
@@ -88,7 +88,7 @@ export default function Footer(props) {
                     icon={
                         <Icon
                             name="wrench"
-                            size={30}
+                            size={50}
                             color="white"
                         />
                     }
@@ -100,7 +100,7 @@ export default function Footer(props) {
                 icon={
                     <Icon
                         name="sign-in"
-                        size={30}
+                        size={50}
                         color="white"
                     />
                 }
