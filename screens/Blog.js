@@ -73,17 +73,11 @@ const styles = StyleSheet.create({
     ArticleTitre: {
         marginTop: 5,
         marginBottom: 2,
-        fontWeight: '600',
-        fontSize: 20,
-        fontFamily: 'sans-serif',
     },
 
     ArticleDesc: {
         marginTop: 5,
         marginBottom: 2,
-        fontWeight: '600',
-        fontSize: 20,
-        fontFamily: 'sans-serif',
     },
 
 
