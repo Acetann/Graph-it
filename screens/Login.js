@@ -37,6 +37,7 @@ export default function Login() {
     }
 
     return (
+        <ScrollView>
         <SafeAreaView>
             <View style={styles.container}>
             
@@ -70,6 +71,7 @@ export default function Login() {
             />
         </View>
         </SafeAreaView>
+        </ScrollView>
     )
 }
 

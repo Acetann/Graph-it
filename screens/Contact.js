@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {View, StyleSheet, Text , TextInput, TouchableOpacity,} from 'react-native';
 import { Switch , Picker } from 'native-base';
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 export default function Equipe(){
@@ -150,6 +151,7 @@ export default function Equipe(){
 
 
     return (
+        <ScrollView>
         <View style={styles.container}>
                 {displayError ?
                 <View style={{marginTop:'3%',marginHorizontal:'5%'}}>
@@ -244,6 +246,7 @@ export default function Equipe(){
             </View>
 
         </View>
+        </ScrollView>
     )
 }
 
