@@ -54,11 +54,9 @@ export default function Service (){
     }
 
     return (
-        <View>
-            <KeyboardAwareScrollView>
-                {ViewContent}
-            </KeyboardAwareScrollView>
-        </View>
+        <ScrollView>
+            {ViewContent}
+        </ScrollView>
     )
 }
 

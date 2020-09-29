@@ -61,17 +61,9 @@ export default function Realisation (){
     }
 
     return (
-        <View>
-            <KeyboardAwareScrollView>
-
-            <View style={styles.container} >
-
-
-            </View>
-
-                {ViewContent}
-            </KeyboardAwareScrollView>
-        </View>
+        <ScrollView>
+            {ViewContent}
+        </ScrollView>
     )
 }
 
@@ -80,6 +72,7 @@ const styles = StyleSheet.create({
             flex: 1,
             margin: 20,
             alignContent:'center',
+            justifyContent: 'space-around',
     },
     card:{
         alignItems: 'center',
