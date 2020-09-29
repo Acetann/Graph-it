@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Text } from 'react-native'
+import { View, StyleSheet, Text } from 'react-native';
+
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -11,104 +12,97 @@ import Contact from '../screens/Contact';
 import Equipe from '../screens/Equipe';
 import Realisation from '../screens/Realisation';
 import Service from '../screens/Service';
-import Login from '../screens/Login';
 
-export default function Footer(props) {
+
+export default function MyFooter(props) {
 
     let page = props.page;
     let navigate = props.navigate;
+    const img = 'red'
 
     return (
         <View style={styles.footer}>
             <View style={styles.menu}>
-
-                <Button
-                    icon={
-                        <Icon
-                            name="home"
-                            size={50}
-
-                            color="white"
-                        />
-                    }
-                    onPress={() => navigate('Accueil')}
-                />
-
-                <Button
-                    icon={
-                        <Icon
-                            name="book"
-                            size={50}
-                            color="white"
-                        />
-                    }
-                    onPress={() => navigate('Blog')}
-                />
-
-                <Button
+                
+                    <Button
                     
-                    icon={
-                        <Icon
-                            name="ticket"
-                            size={50}
-                            color="white"
-                        />
-                    }
-                    color={page === "Contact" ? "#1F6639" : '#1F6639'}
-                    onPress={() => navigate('Contact')}
-                />
-
-                <Button
-                icon={
-                    <Icon
-                        name="users"
-                        size={50}
-                        color="white"
+                        icon={
+                            <Icon
+                                name="home"
+                                size={40}
+                                
+                                color="white"
+                            />
+                        }
+                        buttonStyle={{backgroundColor: '#2CDA6C'}}
+                        onPress={() => navigate('Accueil')}
                     />
-                }
-                    
-                    color={page === "Equipe" ? "#1F6639" : '#1F6639'}
-                    onPress={() => navigate('Equipe')}
-                />
 
-                <Button
-                icon={
-                    <Icon
-                        name="tasks"
-                        size={50}
-                        color="white"
+                    <Button
+                        icon={
+                            <Icon
+                                name="book"
+                                size={40}
+                                color="white"
+                            />
+                        }
+                        buttonStyle={{backgroundColor: '#2CDA6C'}}
+                        onPress={() => navigate('Blog')}
                     />
-                }
-                   
-                    color={page === "Realisation" ? "#1F6639" : '#1F6639'}
-                    onPress={() => navigate('Realisation')}
-                />
 
-                <Button
-                    icon={
-                        <Icon
-                            name="wrench"
-                            size={50}
-                            color="white"
-                        />
-                    }
-                    color={page === "Service" ? "#1F6639" : '#1F6639'}
-                    onPress={() => navigate('Service')}
-                />
+                    <Button
 
-                <Button
-                icon={
-                    <Icon
-                        name="sign-in"
-                        size={50}
-                        color="white"
+                        icon={
+                            <Icon
+                                name="ticket"
+                                size={40}
+                                color="white"
+                            />
+                        }
+                        buttonStyle={{backgroundColor: '#2CDA6C'}}
+                        onPress={() => navigate('Contact')}
                     />
-                }
-                    
-                    color={page === "Login" ? "#1F6639" : '#1F6639'}
-                    onPress={() => navigate('Login')}
-                />
 
+                    <Button
+                        icon={
+                            <Icon
+                                name="users"
+                                size={40}
+                                color="white"
+                            />
+                        }
+
+                        buttonStyle={{backgroundColor: '#2CDA6C'}}
+                        onPress={() => navigate('Equipe')}
+                    />
+
+                    <Button
+                        icon={
+                            <Icon
+                                name="tasks"
+                                size={40}
+                                color="white"
+                            />
+                        }
+
+                        buttonStyle={{backgroundColor: '#2CDA6C'}}
+                        onPress={() => navigate('Realisation')}
+                    />
+
+                    <Button
+                        icon={
+                            <Icon
+                                name="wrench"
+                                size={40}
+                                color="white"
+                                
+                            />
+                        }
+                        buttonStyle={{backgroundColor: '#2CDA6C'}}
+                        onPress={() => navigate('Service')}
+                    />
+
+                
             </View>
 
             <View style={{ flex: 1 }}>
@@ -128,7 +122,7 @@ export default function Footer(props) {
 
                 {page === 'LoadingScreen' && <LoadingScreen />}
 
-                {page === 'Login' && <Login />}
+
 
 
             </View>
@@ -146,10 +140,10 @@ const styles = StyleSheet.create({
 
     menu: {
         display: 'flex',
-        width:'100%',
+        width: '100%',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        backgroundColor:'white',
+        backgroundColor:'#2CDA6C',
 
 
 

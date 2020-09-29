@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, SafeAreaView, Button } from 'react-native';
 
 
 import MyHeader from './components/Header';
-import Footer from './components/Footer'
+import MyFooter from './components/Footer'
 
 
 
@@ -48,9 +48,9 @@ export default function App() {
 
         {page === 'LoadingScreen' && <LoadingScreen />}
 
-        {page === 'Login' && <Login />}
+       
 
-        <Footer navigate={navigate} />
+        <MyFooter navigate={navigate} />
       </View>
 
 

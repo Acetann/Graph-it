@@ -58,8 +58,8 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'space-around',
         alignItems: 'center',
-        marginTop: '5%',
-        marginBottom: '2%'
+        backgroundColor:'#C5FFFF',
+
     },
 
     ArticleImage: {
@@ -73,6 +73,7 @@ const styles = StyleSheet.create({
     ArticleTitre: {
         marginTop: 5,
         marginBottom: 2,
+        
     },
 
     ArticleDesc: {
