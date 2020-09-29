@@ -66,25 +66,7 @@ export default function Realisation (){
 
             <View style={styles.container} >
 
-                <TouchableOpacity  style={styles.appButtonContainer}>
-                    <Text style={styles.appButtonText} >App Mobile</Text>
-                </TouchableOpacity>
 
-                <TouchableOpacity  style={styles.appButtonContainer} onPress={() => Alert.alert('Simple Button pressed')}>
-                    <Text  style={styles.appButtonText}>App Web</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity  style={styles.appButtonContainer} onPress={() => Alert.alert('Simple Button pressed')}>
-                    <Text style={styles.appButtonText} >IOS</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity  style={styles.appButtonContainer} onPress={() => Alert.alert('Simple Button pressed')}>
-                    <Text style={styles.appButtonText}>Androïd</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity  style={styles.appButtonContainer} onPress={() => Alert.alert('Simple Button pressed')}>
-                    <Text style={styles.appButtonText} >Site web</Text>
-                </TouchableOpacity>
             </View>
 
                 {ViewContent}
