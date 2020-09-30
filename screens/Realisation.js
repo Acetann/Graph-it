@@ -1,7 +1,7 @@
 import React, { useState, Components } from 'react';
 import {View, StyleSheet, Text ,Image, ScrollView, Card, Button, Dimensions, ImageBackground ,Alert, TouchableOpacity, LayoutAnimation} from 'react-native';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import Icon from "react-native-vector-icons/MaterialIcons";
+import SwiperFlatList from 'react-native-swiper-flatlist';
 
 
 const {height, width} = Dimensions.get('window');
@@ -41,16 +41,12 @@ export default function Realisation (){
             ViewContent.push(
 
                 <View style={styles.container}>
-                    <View style={styles.card}>
-                    <Text style={styles.realisationTitre}> {data[i].TitreR}</Text>
-                        <View style={styles.declinaisons}>
-                            <Text style={styles.decliButton}> {data[i].TypeR} </Text>
+
+                        <View style={[styles.child, { backgroundColor: 'tomato' }]}>
+                            <Text style={styles.realisationTitre}> {data[i].TitreR}</Text>
+                            <Image style={styles.reaImage} source={{uri:'http://graph-it.cesi.group'+data[i].ImageR.url}}/>
+                            <Text style={styles.text}> {data[i].DescriptionR} </Text>
                         </View>
-                        <Text style={styles.realisationDesc}> {data[i].SubtitleR}</Text>
-                        <Image style={styles.reaImage} source={{uri:'http://graph-it.cesi.group'+data[i].ImageR.url}}/>
-                        <Text>  {data[i].Titre}</Text>
-                        <Text style={styles.realisationDesc}> {data[i].DescriptionR}</Text>
-                    </View>
                 </View>
 
             )
@@ -62,7 +58,14 @@ export default function Realisation (){
 
     return (
         <ScrollView>
+            <SwiperFlatList
+                autoplay
+                autoplayDelay={2}
+                autoplayLoop
+                index={2}
+            >
             {ViewContent}
+            </SwiperFlatList>
         </ScrollView>
     )
 }
@@ -72,7 +75,6 @@ const styles = StyleSheet.create({
             flex: 1,
             margin: 20,
             alignContent:'center',
-            justifyContent: 'space-around',
     },
     card:{
         alignItems: 'center',
@@ -104,7 +106,7 @@ const styles = StyleSheet.create({
         fontSize:20,
         color: 'white',
         alignItems:'center',
-        margin: 20,
+        margin: 10,
     },
     declinaisons:{
         flexDirection: 'row',
@@ -138,6 +140,18 @@ const styles = StyleSheet.create({
         color: 'white',
         alignItems:'center',
         textTransform: "uppercase",
+    },
+    child: {
+        height: height * 0.5,
+        width,
+        justifyContent: 'center'
+    },
+    text: {
+        fontWeight:'600',
+        fontSize:20,
+        color: 'white',
+        alignItems:'center',
+        margin: 10,
     },
 
     }
