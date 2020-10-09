@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
         justifyContent : 'center',
         alignItems: 'center',
         borderRadius: 20,
-        backgroundColor: '#1F6639',
+        backgroundColor: '#19327c',
         shadowColor: 'black',
         shadowOffset: { width: 5, height: 5 },
         shadowOpacity: 0.5,

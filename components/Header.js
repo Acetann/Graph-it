@@ -10,7 +10,7 @@ export default function MyHeader({ title }) {
         <View>
 
             <Header
-                backgroundColor={"#2CDA6C"}
+                backgroundColor={"#19327c"}
                 centerComponent={{ text: title, style: { color: '#fff' } }}>
 
             </Header>

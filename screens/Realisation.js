@@ -9,6 +9,8 @@ const {height, width} = Dimensions.get('window');
 export default function Realisation (){
 
     const [data,setData] = useState(null)
+        
+
 
 
     function getRealisations(){
@@ -42,7 +44,7 @@ export default function Realisation (){
 
                 <View style={styles.container}>
 
-                        <View style={[styles.child, { backgroundColor: 'tomato' }]}>
+                        <View style={[styles.child, { backgroundColor: '#19327c' }]}>
                             <Text style={styles.realisationTitre}> {data[i].TitreR}</Text>
                             <Image style={styles.reaImage} source={{uri:'http://graph-it.cesi.group'+data[i].ImageR.url}}/>
                             <Text style={styles.text}> {data[i].DescriptionR} </Text>
@@ -58,11 +60,8 @@ export default function Realisation (){
 
     return (
         <ScrollView>
-            <SwiperFlatList
-                autoplay
-                autoplayDelay={2}
-                autoplayLoop
-                index={2}
+            <SwiperFlatList style={styles.card}
+                index={1}
             >
             {ViewContent}
             </SwiperFlatList>
@@ -77,21 +76,19 @@ const styles = StyleSheet.create({
             alignContent:'center',
     },
     card:{
-        alignItems: 'center',
+        backgroundColor: '#19327c',
         borderRadius: 20,
-        backgroundColor: '#1F6639',
         shadowColor: 'black',
         shadowOffset: { width: 5, height: 5 },
         shadowOpacity: 0.5,
         shadowRadius: 10,
-        elevation: 20,
-        margin: 20,
-        marginBottom: 20,
+        margin: 5,
     },
     realisationTitre:{
         fontWeight:'600',
         fontSize:20,
         color: 'white',
+        alignItems:'center',
         margin: 10,
     },
     reaImage:{
@@ -100,6 +97,7 @@ const styles = StyleSheet.create({
         height:100,
         borderRadius:10,
         marginBottom:25,
+        justifyContent:'center',
     },
     realisationDesc:{
         fontWeight:'600',
@@ -151,7 +149,7 @@ const styles = StyleSheet.create({
         fontSize:20,
         color: 'white',
         alignItems:'center',
-        margin: 10,
+        margin: 5,
     },
 
     }

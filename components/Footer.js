@@ -34,7 +34,7 @@ export default function MyFooter(props) {
                                 color="white"
                             />
                         }
-                        buttonStyle={{backgroundColor: '#2CDA6C'}}
+                        buttonStyle={{backgroundColor: '#19327c'}}
                         onPress={() => navigate('Accueil')}
                     />
 
@@ -46,7 +46,7 @@ export default function MyFooter(props) {
                                 color="white"
                             />
                         }
-                        buttonStyle={{backgroundColor: '#2CDA6C'}}
+                        buttonStyle={{backgroundColor: '#19327c'}}
                         onPress={() => navigate('Blog')}
                     />
 
@@ -59,7 +59,7 @@ export default function MyFooter(props) {
                                 color="white"
                             />
                         }
-                        buttonStyle={{backgroundColor: '#2CDA6C'}}
+                        buttonStyle={{backgroundColor: '#19327c'}}
                         onPress={() => navigate('Contact')}
                     />
 
@@ -72,7 +72,7 @@ export default function MyFooter(props) {
                             />
                         }
 
-                        buttonStyle={{backgroundColor: '#2CDA6C'}}
+                        buttonStyle={{backgroundColor: '#19327c'}}
                         onPress={() => navigate('Equipe')}
                     />
 
@@ -85,7 +85,7 @@ export default function MyFooter(props) {
                             />
                         }
 
-                        buttonStyle={{backgroundColor: '#2CDA6C'}}
+                        buttonStyle={{backgroundColor: '#19327c'}}
                         onPress={() => navigate('Realisation')}
                     />
 
@@ -98,7 +98,7 @@ export default function MyFooter(props) {
                                 
                             />
                         }
-                        buttonStyle={{backgroundColor: '#2CDA6C'}}
+                        buttonStyle={{backgroundColor: '#19327c'}}
                         onPress={() => navigate('Service')}
                     />
 
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
         width: '100%',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        backgroundColor:'#2CDA6C',
+        backgroundColor:'#19327c',
 
 
 
